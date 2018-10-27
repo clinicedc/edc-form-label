@@ -23,7 +23,7 @@ For a sequence of data collection timepoints, we ask the question, "Are you circ
 
 
 	@register(MyModel)
-	class MyModelAdmin(FieldsetsModelAdminMixin, admin.ModelAdmin):
+	class MyModelAdmin(admin.ModelAdmin):
 
 	    fieldsets = (
 	        (None, {
