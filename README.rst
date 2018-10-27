@@ -51,4 +51,3 @@ For a sequence of data collection timepoints, we ask the question, "Are you circ
     
 .. |coverage| image:: https://coveralls.io/repos/github/clinicedc/edc-form-label/badge.svg?branch=develop
     :target: https://coveralls.io/github/clinicedc/edc-form-label?branch=develop
-    
