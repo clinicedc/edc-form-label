@@ -12,7 +12,7 @@ For a sequence of data collection timepoints, we ask the question, "Are you circ
 
 .. code-block:: python
 
-	from edc_form_label import FormLabel, CustomFormLabel
+	from edc_form_label import FormLabel, CustomFormLabel, FormLabelModelAdminMixin
 
 
 	class MyCustomLabelCondition(CustomLabelCondition):
@@ -23,7 +23,7 @@ For a sequence of data collection timepoints, we ask the question, "Are you circ
 
 
 	@register(MyModel)
-	class MyModelAdmin(admin.ModelAdmin):
+	class MyModelAdmin(FormLabelModelAdminMixin admin.ModelAdmin):
 
 	    fieldsets = (
 	        (None, {
