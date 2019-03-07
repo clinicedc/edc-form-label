@@ -1,6 +1,6 @@
 django_crypto_fields==0.1.21
 edc_appointment==0.2.41
-edc_device
+edc_device==0.2.14
 edc_metadata
 edc_registration
 edc_timepoint
