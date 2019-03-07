@@ -1,4 +1,4 @@
-django_crypto_fields
+django_crypto_fields==0.1.21
 edc_appointment
 edc_device
 edc_metadata
