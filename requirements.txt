@@ -3,5 +3,5 @@ edc_appointment==0.2.41
 edc_device==0.2.14
 edc_metadata==0.2.27
 edc_registration==0.2.23
-edc_timepoint
+edc_timepoint==0.1.10
 edc_visit_schedule
