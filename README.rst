@@ -1,7 +1,7 @@
 |pypi| |travis| |coverage|
 
 edc-form-label
--------------
+--------------
 Customize Django's form label in realtime
 
 For a sequence of data collection timepoints, we ask the question, "Are you circumcised?". At some time point we hope the response will be `YES`, but until then, we need to ask "Since we last saw you, were you circumcised?". It is a lot better if we can ask, "Since we last saw you in 'October 2018', were you circumcised?", where 'October 2018' represents the timepoint from which we got our last reponse.

@@ -20,7 +20,7 @@ setup(
     include_package_data=True,
     url="http://github.com/clinicedc/edc-form-label",
     license="GPL license, see LICENSE",
-    description="Customize Django's form label in realtime",
+    description="Customize Django form label in realtime",
     long_description=README,
     zip_safe=False,
     keywords="django edc form",
