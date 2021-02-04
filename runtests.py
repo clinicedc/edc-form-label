@@ -1,14 +1,13 @@
 #!/usr/bin/env python
-import django
 import logging
 import os
 import sys
+from os.path import abspath, dirname
 
+import django
 from django.conf import settings
 from django.test.runner import DiscoverRunner
 from edc_test_utils import DefaultTestSettings
-from os.path import abspath, dirname
-
 
 app_name = "edc_form_label"
 base_dir = dirname(abspath(__file__))
@@ -31,6 +30,7 @@ DEFAULT_SETTINGS = DefaultTestSettings(
         "django_crypto_fields.apps.AppConfig",
         "django_revision.apps.AppConfig",
         "edc_auth.apps.AppConfig",
+        "edc_crf.apps.AppConfig",
         "edc_appointment.apps.AppConfig",
         "edc_metadata.apps.AppConfig",
         "edc_identifier.apps.AppConfig",
@@ -42,6 +42,7 @@ DEFAULT_SETTINGS = DefaultTestSettings(
         "edc_search.apps.AppConfig",
         "edc_offstudy.apps.AppConfig",
         "edc_visit_schedule.apps.AppConfig",
+        "edc_visit_tracking.apps.AppConfig",
         "edc_form_label.apps.AppConfig",
     ],
     add_dashboard_middleware=True,
