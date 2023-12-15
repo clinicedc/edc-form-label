@@ -1,29 +1,24 @@
 #!/usr/bin/env python
 import logging
-import os
-import sys
-from os.path import abspath, dirname
+from pathlib import Path
 
-import django
-from django.conf import settings
-from django.test.runner import DiscoverRunner
 from edc_constants.constants import IGNORE
-from edc_test_utils import DefaultTestSettings
+from edc_test_utils import DefaultTestSettings, func_main
 
 app_name = "edc_form_label"
-base_dir = dirname(abspath(__file__))
+base_dir = Path(__file__).absolute().parent
 
-DEFAULT_SETTINGS = DefaultTestSettings(
+project_settings = DefaultTestSettings(
     calling_file=__file__,
     BASE_DIR=base_dir,
     APP_NAME=app_name,
-    ETC_DIR=os.path.join(base_dir, app_name, "tests", "etc"),
     EDC_NAVBAR_VERIFY_ON_LOAD=IGNORE,
     EDC_AUTH_SKIP_SITE_AUTHS=True,
     EDC_AUTH_SKIP_AUTH_UPDATER=True,
     SUBJECT_VISIT_MODEL="edc_visit_tracking.subjectvisit",
     SUBJECT_VISIT_MISSED_MODEL="visit_schedule_app.subjectvisitmissed",
     SUBJECT_REQUISITION_MODEL="visit_schedule_app.subjectrequisition",
+    EDC_SITES_REGISTER_DEFAULT=True,
     INSTALLED_APPS=[
         "django.contrib.admin",
         "django.contrib.auth",
@@ -55,16 +50,11 @@ DEFAULT_SETTINGS = DefaultTestSettings(
         "visit_schedule_app.apps.AppConfig",
     ],
     add_dashboard_middleware=True,
-    # add_lab_dashboard_middleware=True,
 ).settings
 
 
 def main():
-    if not settings.configured:
-        settings.configure(**DEFAULT_SETTINGS)
-    django.setup()
-    failures = DiscoverRunner(failfast=True).run_tests([f"{app_name}.tests"])
-    sys.exit(failures)
+    func_main(project_settings, f"{app_name}.tests")
 
 
 if __name__ == "__main__":
