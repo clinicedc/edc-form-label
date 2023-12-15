@@ -49,8 +49,8 @@ For a sequence of data collection timepoints, we ask the question, "Are you circ
 .. |pypi| image:: https://img.shields.io/pypi/v/edc-form-label.svg
     :target: https://pypi.python.org/pypi/edc-form-label
 
-.. |actions| image:: https://github.com/clinicedc/edc-form-label/workflows/build/badge.svg?branch=develop
-  :target: https://github.com/clinicedc/edc-form-label/actions?query=workflow:build
+.. |actions| image:: https://github.com/clinicedc/edc-form-label/actions/workflows/build.yml/badge.svg
+  :target: https://github.com/clinicedc/edc-form-label/actions/workflows/build.yml
 
 .. |coverage| image:: https://coveralls.io/repos/github/clinicedc/edc-form-label/badge.svg?branch=develop
     :target: https://coveralls.io/github/clinicedc/edc-form-label?branch=develop
