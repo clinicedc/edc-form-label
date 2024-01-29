@@ -2,7 +2,6 @@
 import logging
 from pathlib import Path
 
-from edc_constants.constants import IGNORE
 from edc_test_utils import DefaultTestSettings, func_main
 
 app_name = "edc_form_label"
@@ -12,7 +11,7 @@ project_settings = DefaultTestSettings(
     calling_file=__file__,
     BASE_DIR=base_dir,
     APP_NAME=app_name,
-    EDC_NAVBAR_VERIFY_ON_LOAD=IGNORE,
+    SILENCED_SYSTEM_CHECKS=["sites.E101", "edc_navbar.E002", "edc_navbar.E003"],
     EDC_AUTH_SKIP_SITE_AUTHS=True,
     EDC_AUTH_SKIP_AUTH_UPDATER=True,
     SUBJECT_VISIT_MODEL="edc_visit_tracking.subjectvisit",
@@ -36,6 +35,9 @@ project_settings = DefaultTestSettings(
         "edc_list_data.apps.AppConfig",
         "edc_metadata.apps.AppConfig",
         "edc_identifier.apps.AppConfig",
+        "edc_data_manager.apps.AppConfig",
+        "edc_form_runners.apps.AppConfig",
+        "edc_lab.apps.AppConfig",
         "edc_facility.apps.AppConfig",
         "edc_sites.apps.AppConfig",
         "edc_notification.apps.AppConfig",
@@ -48,6 +50,7 @@ project_settings = DefaultTestSettings(
         "edc_visit_tracking.apps.AppConfig",
         "edc_form_label.apps.AppConfig",
         "visit_schedule_app.apps.AppConfig",
+        "edc_appconfig.apps.AppConfig",
     ],
     add_dashboard_middleware=True,
 ).settings
